@@ -1,11 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Draggable Divs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    header {
+      background: #f1f1f1;
+      padding: 15px;
+      font-size: 22px;
+    }
+
+    .model {
+      margin: 30px auto;
+      width: 400px;
+      height: 200px;
+      border: 2px solid #666;
+      background: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      padding: 15px 25px;
+      color: white;
+      border-radius: 5px;
+      cursor: move;
+    }
+
+    .color1{
+      background: dodgerblue;
+      margin: 20px;
+      display: inline-block;
+    }
+
+    .color2{
+      background: seagreen;
+    }
+
+    footer {
+      background: #f1f1f1;
+      margin-top: 40px;
+      padding: 10px;
+    }
+  </style>
 </head>
+
 <body>
-    
+  <header>Draggable Exercises</header>
+
+
+  <div class="model">
+    <div class="box color2" draggable="true">Drag Me Within Box</div>
+  </div>
+  <div class="box color1" draggable="true">Drag Me Within Window</div>
+  <footer>© 2024 Draggable Divs Exercise</footer>
 </body>
 </html>
