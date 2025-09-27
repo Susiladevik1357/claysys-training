@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/22ac3c2394.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        body{
+            background-size: cover;
+        }
+       
+        .header{
+          
+            display: grid;
+            grid-template-columns: 3fr 1fr 3fr 2fr  4fr 1fr 5fr ;
+           
+        }
+        #logo{
+            color: rgb(255, 36, 73); 
+            display: flex;
+            font-family: cursive;
+            font-size: 25px;
+            padding-top:30px ;
+            padding-left: 30px;
+            
+
+        }
+        #search{
+            display: flex;
+            height: 30px;
+            align-items: center;
+            border: 1px solid grey;
+            border-radius: 5px;
+            margin-top: 10px;
+            
+            
+        }
+        #symbol{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: flex;
+           
+            padding-top: 17px;
+            margin-right: 20px;
+            
+        }
+        #symbol p{
+            margin-top: -5px;
+            margin-right: 5px;
+        }
+       
+        #bell{
+            padding-top: 17px;
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+        }
+       
+        
+        #profile{
+            padding: 10px;
+            display: flex;
+            position: relative;
+            flex-direction: row;
+            
+        }
+        .ddown {
+            position: relative;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .ddown-content {
+            display: none;
+            position: absolute;
+            z-index: 1;
+            background-color:rgb(255, 255, 255);
+            width: 240px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            border-radius: 5px;
+         }
+         .ddown-content li{
+            padding: 10px;
+         }
+         .ddown-action {
+            position: relative;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .ddown-content-li {
+            display: none;
+            position: absolute;
+            z-index: 1;
+            background-color:rgb(255, 255, 255);
+            width: 150px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            border-radius: 5px;
+         }
+         .ddown-content-li li{
+            padding: 10px;
+         }
+
+        
+        
+        .nav{
+            margin-top: 30px;
+            margin-right: 10px;
+            text-align: left;
+            margin-left: -20px;
+            line-height: 50px;
+            display: grid;
+            grid-template-rows: 2fr 1fr;
+            
+        }
+        .nav .menu{
+            margin-left: -20px;
+        }
+        .nav a{
+            
+            text-decoration: none;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 500;
+            text-align: left;
+            font-size: 15px;
+            line-height: 30px;
+            color: rgb(121, 121, 121);
+            padding: 5px 10px 5px 10px;
+            border-radius: 5px;
+            
+        }
+        .nav div{
+            padding-left:30px ;
+        }
+        .busy{
+            display: flex;
+        }
+
+        .main{
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            
+        }
+        .sec-main{
+            position: relative;
+            background-color: rgba(255, 229, 245, 0.473);
+            border-radius: 20px;
+            padding: 10px;
+        }
+        .sec-main .sec1{
+            display: grid;
+            grid-template-columns:1fr 1fr 1fr;
+            gap: 20px;
+            margin:20px 10px 30px;
+            
+        }
+        .sec-main .sec1 .box1{
+            display: grid;
+            grid-template-columns: 2fr 2fr;
+            gap: 10px;
+            background-color: white;
+            border-radius: 20px;
+            padding: 10px;
+            
+            
+        }
+        .sec-main .sec1 .box2{
+            display: grid;
+            grid-template-columns: 2fr 2fr;
+            gap: 10px;
+            background-color: white;
+            border-radius: 20px;
+            padding: 10px;
+        }
+        .sec-main .sec1 .box3{
+            display: grid;
+            grid-template-columns: 2fr 2fr;
+            gap: 10px;
+            background-color: white;
+            border-radius: 20px;
+            padding: 10px;
+        }
+        .sec-main .sec1 p{
+            color: rgb(168, 168, 168);
+            margin-top: -20px;
+            font-size: 15px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+        .sec-main .sec1 h1{
+            font-weight: 900;
+            font-size: 30px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        .icon1{
+            display: block;
+            margin: 20px 10px 20px 30px;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            height: 60px;
+            width: 50px;
+            background-color: rgb(255, 255, 133);
+            color: rgb(243, 227, 0);
+            font-size: 40px;
+            border-radius: 50px;
+        }
+        .icon2{
+            display: block;
+            margin: 20px 10px 20px 30px;
+            padding-top: 10px;
+            padding-left: 10px; 
+            padding-right: 10px;
+            height: 60px;
+            width: 50px;
+            background-color: rgba(0, 102, 255, 0.199);
+            color: rgb(0, 17, 255);
+            font-size: 40px;
+            border-radius: 50px;
+            
+        }
+        .icon3{
+            display: block;
+            margin: 20px 10px 20px 30px;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            height: 60px;
+            width: 50px;
+            background-color: rgb(198, 246, 255);
+            color: rgb(0, 146, 127);
+            font-size: 40px;
+            border-radius: 50px;
+        }
+        .sec-main .sec2{
+           
+            display: grid;
+            grid-template-columns: 1fr;
+            margin:20px 10px 30px;
+
+        }
+        .sec-main .sec2 .recent-orders{
+            display: grid;
+            grid-template-columns: 1fr 7fr 2fr;
+            gap: 10px;
+            padding: 10px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+         .sec-main .sec2 .recent-orders{
+            font-weight: 600;
+           
+
+         }
+          .sec-main .sec2 .recent-orders select{
+            height: 30px;
+            width: 130px;
+            border: 1px solid rgba(128, 128, 128, 0.39);
+            background-color: rgba(255, 229, 245, 0.473);
+            border-radius: 5px;
+          }
+        .sec-main .sec2 table{
+           overflow-x: auto;
+        }
+        .sec-main .sec2 tr{
+           border: 1px solid rebeccapurple;
+        }
+
+
+        .box1{
+            border: 1px solid #ccc;
+        }
+        .box2{
+            border: 1px solid #ccc;
+        }
+        .box3{
+            border: 1px solid #ccc;
+        }
+        
+        table{
+            background-color: rgba(255, 229, 245, 0.473);
+            border-collapse: separate;
+            overflow-x: auto;
+            text-align: left;
+            border-spacing:0px 5px; 
+                 
+        }
+    
+        tbody tr td:first-child{
+            border-top-left-radius:10px ;
+            border-bottom-left-radius:10px;
+            border-left: 1px solid #ccc;
+
+            
+        }
+        tbody tr td:last-child{
+            
+            border-top-right-radius:10px ;
+            border-bottom-right-radius:10px ;
+             border-right: 1px solid #ccc;
+            
+        }
+        
+         thead th:first-child{
+            border-top-left-radius:10px ;
+            border-bottom-left-radius:10px;
+            border-left: 1px solid #ccc;
+
+            
+        }
+        thead th:last-child{
+            
+            border-top-right-radius:10px ;
+            border-bottom-right-radius:10px ;
+             border-right: 1px solid #ccc;
+        }
+            
+        th{
+             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            padding: 10px;
+            font-size: 7px;
+            border-top:1px solid #ccc;
+            border-bottom:1px solid #ccc;
+            background-color: #ffffff;
+            border-right-color:white ;
+            border-left: none ;
+            font-size: 10px;
+            
+
+        }
+        td{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            padding: 5px;
+            font-size: 12px;
+            border-top:1px solid #ccc;
+            border-bottom:1px solid #ccc;
+            background-color: #ffffff;
+            border-right-color:white ;
+            border-left: none ;
+        }
+        table img{
+            height: 30px ;
+            width: 30px;
+            border-radius: 15px;
+            text-align: justify;
+        }
+        .divider{
+            display: none;
+        }
+        .swith {
+            position: relative;
+            display: inline-block;
+            width: 30px;
+            height: 14px;
+        }
+        .swith input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+
+        .slider {
+            position: absolute;
+            cursor: grab;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 14px;
+            width: 16px;
+            background-color: white;
+            transition: .4s;
+            
+        }
+
+        input:checked + .slider {
+            background-color: #00f729;
+            cursor: grab;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #00ff2a;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(15px);
+            cursor: grabbing;
+        }
+
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+        #busy p{
+            margin-right: 10px;
+            font-weight: 700;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #busy{
+            display: flex;
+        }
+        #busy form{
+            margin-top: 36px;
+        }
+                
+        
+        @media (max-width:768px) {
+            .header{
+                grid-template-columns: 1fr;
+                line-height: 40px;
+            }
+            
+            #logo{
+                padding-left: 50px;
+                margin-left: 60px;
+            }
+            
+            #symbol p{
+                margin-top: -15px;
+            }
+            #bell{
+                margin-top: -20px;
+            }
+            
+            .main{
+                grid-template-columns: 1fr;
+            }
+            .nav {
+                display: grid;
+                grid-template-rows: 1fr ;
+            }
+            .nav .menu div{
+                padding-top:10px ;
+            }
+            .nav a{
+                display: flex;
+                flex-direction: row;
+                padding-top:10px ;
+            }
+            .nav .nav-name{
+                margin-top: -08px;
+            }
+            .sec-main .sec1{
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+             .sec-main .sec2 .recent-orders{
+                grid-template-columns: 1fr;
+             }
+            .sec-main .sec2 table{
+                display: block;
+                overflow-x: auto;
+            }
+            .divider{
+                display:flex;
+            }
+            
+        }  
+            .ddown:hover .ddown-content {
+                display: block;
+            }
+            .ddown-content li:hover{
+                background-color: rgb(255, 60, 125);
+                color: white;
+                border-radius: 5px;
+                padding: 10px;
+                margin-right:10px ;
+            }
+            .ddown-action:hover .ddown-content-li {
+                z-index: 10;
+                display: block;
+                
+                
+            }
+            
+            .ddown-content-li li:hover{
+                background-color: rgb(250, 227, 255);
+                color: rgb(255, 49, 145);
+                
+                border-radius: 2px;
+                padding: 10px;
+                margin-right:10px ;
+            }
+        
+        
+          .nav .menu div:hover{
+          
+            border-left: 4px solid rgb(223, 0, 37);
+            border-radius: 1px;
+            color: rgb(255, 87, 115);
+          }
+          .nav a:hover{
+            
+            
+            background-color: rgb(255, 201, 222);
+            color: rgb(255, 81, 110);
+          }
+         
+          
+          
+          tbody tr:hover{
+            /* position:absolute;
+            z-index: 1;
+            background-color: rgb(255, 255, 255);
+            margin-left: 20px;
+            width: 100%;
+            border-spacing: 30px 0px;
+            box-shadow: 0px 0px 100px black;
+            border-radius: 10px;   */
+            transform: translate(50px);
+            
+            
+
+          }
+          #bell:hover{
+            color: darkblue;
+          }
+          #profile:hover{
+            color: rgb(182, 0, 30);
+            background-color: rgb(255, 246, 247);
+            border-radius:10px ;
+          }
+          
+
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div id="logo"><img src="photo/bringova.jpg" height="30px" width="35px" ><sup>Bringova</sup></div>
+            <div></div>
+            <div id="search">
+                <button type="submit" style="width: 50px; border:none; background-color: white; color: grey;"><i class="fa fa-search"></i></button>
+                <input type="text" name="searchbar" placeholder="Search" style="border: none;">
+            </div>
+            <div></div>
+            <div id="symbol">
+                <p>Open for Orders </p>
+                <form >
+                    
+                    <label class="swith"> 
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </form>
+                
+            </div>
+            <div id="bell">
+                    <i class="fa-regular fa-bell"></i>
+                </div>
+            
+            <div id="profile">
+                <img src="photo/photo.jpg" alt="" height="30px" width="30px" style="border-radius: 10px; margin-right: 10px; border: 1px solid black;">
+                <div class="ddown   " style="font-weight: 600;">Lubomir DVorak <i class="fa-solid fa-caret-down"></i>
+                    <div class="ddown-content">
+                         <ul style="list-style-type: none;">
+                        <li>Account Details</li>
+                        <li><i class="fa-solid fa-right-from-bracket"></i>logout</li>
+                    </ul>
+                    </div>
+                </div>
+             
+
+            </div>
+        </div>
+        <hr class="divider" size="2" color="#ccc">
+         <div class="main">
+            <div class="nav">
+                <div class="menu">
+                    <div ><a href="#" ><i class="fa fa-clipboard-list" style="padding-right: 5px;"></i><span class="nav-name">Live Orders</span></a></div>
+                    <div><a href="#"><i class="fa-solid fa-bag-shopping" style="padding-right: 5px;"></i><span class="nav-name">Order History</span></a></a></div>
+                    <div><a href="#"><i class="fa-solid fa-award" style="padding-right: 5px;"></i><span class="nav-name">Offers</span></a></div>
+                    <div><a href="#"><i class="fa-solid fa-suitcase" style="padding-right: 5px;"></i><span class="nav-name">Products</span></a></div>
+                    <div><a href="#"><i class="fa-solid fa-warehouse" style="padding-right: 5px;"></i><span class="nav-name">Stock</span></a></div>
+                    <div><a href="#"><i class="fa-solid fa-message" style="padding-right: 5px;"></i><span class="nav-name">Message</span></a></div>
+                    <div><a href="#"><i class="fa-solid fa-gear" style="padding-right: 5px;"></i><span class="nav-name">Settings</span></a></div>
+                </div>
+                <div>
+                    <div id="busy">
+                        <p>Busy mode </p>
+                        <form >
+                            
+                            <label class="swith"> 
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </form>
+                
+                    </div>
+                </div>
+                 <hr class="divider" size="2" color="#ccc">
+            </div>
+            <div class="sec-main">
+                <h5 style="padding-left: 10px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Live Orders</h5>
+                <div class="sec1">
+                    
+                    <div class="box1">
+                        <div class="icon1"><i class="fa-solid fa-bag-shopping" style="padding-right: 5px;"></i></div>
+                        <div class="orders">
+                            <h1>47</h1>
+                            <p>Orders</p>
+                        </div>
+                    </div>
+                    <div class="box2">
+                          <div class="icon2"><i class="fa-solid fa-business-time" style="padding-right: 5px;"></i></div>
+                        <div class="orders">
+                            <h1>56</h1>
+                            <p>Total pending</p>
+                        </div>
+                    </div>
+                    <div class="box3">
+                          <div class="icon3"><i class="fa-solid fa-truck-fast" style="padding-right: 5px;"></i></div>
+                        <div class="orders">
+                            <h1>26</h1>
+                            <p>Total Dispatch</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sec2">
+                    <div class="recent-orders" >
+                         <div>Orders</div>
+                         <div></div>
+                         <div>
+                            <form>
+                                
+                                 <select class="select" name="recent-orders" id="re">
+                                        <option value="items">Recent Orders</option>
+                                        <option value="Time">Time</option>
+                                    </optgroup>
+                                </select>
+                            </form>
+                         </div>
+                        
+
+                        </div>
+                   
+                    <table>
+                        <thead style="text-align: left;">
+                       
+                            <th>ID</th>
+                            <th></th>
+                            <th style="width:300px ; ">Name</th>
+                            <th>Payment</th>
+                            <th style="width: 100px;">Time Remaining </th>
+                            <th>Type </th>
+                            <th style="width: 200px; font-size: 10px;">Status</th>
+                            <th>Total</th>
+                            <th style="text-align: center;">Action</th>
+                        
+                        </thead>
+                        <tbody>
+                        <tr class="row" >
+                            <td>#7683</td>
+
+                            <td><img src="photo/photo.jpg" alt=""></td>
+                            <td> Brookiyn Zoe</td>
+                            <td>Cash</td>
+                            <td><i class="fa-regular fa-clock" style="font-size: 15px; padding-right: 10px;"></i>13 min</td>
+                            <td style="color: rgb(255, 81, 110);"   >Delivery</td>
+                             <td><span style="color: orange; background-color:  #ececec; border-radius: 5px; padding: 5px;">On The Way</span></td>
+                            <td>£12.00</td>
+                           <td  class="ddown-action"><i class="fa-solid fa-ellipsis-vertical" style="background-color: #ccc; padding: 5px;border-radius: 2px; "></i>
+                                <div class="ddown-content-li">
+                                    <ul style="list-style-type: none;">
+                                        <li>Cancel</li>
+                                        <li>Cancel Product</li>
+                                        <li>Message</li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="row">
+                            <td>#2632</td>
+                            <td><img src="photo/men profile.jpg.png" alt=""></td>
+                            <td>Alice KrejCova</td>
+                            <td>Paid</td>
+                          <td><i class="fa-regular fa-clock" style="font-size: 15px; padding-right: 10px;"></i>49 min</td>
+                            <td>Collection</td>
+                            <td><span style="color: white; background-color: rgb(255, 29, 29); padding: 6px; border-radius: 5px;">Ready</span></td>
+                            <td>£18.00</td>
+                            <td class="ddown-action"><i class="fa-solid fa-ellipsis-vertical" style="background-color: #ccc; padding: 5px;border-radius: 2px; "></i>
+                                <div class="ddown-content-li">
+                                    <ul style="list-style-type: none;">
+                                        <li>Cancel</li>
+                                        <li>Cancel Product</li>
+                                        <li>Message</li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr class="row">
+                        <tr class="row">
+                            <td>#2632</td>
+                            <td><img src="photo/profile.jpg.png"></td>
+                            <td>Jurriaan Van</td>
+                            <td>Cash</td>
+                            <td><i class="fa-regular fa-clock" style="font-size: 15px; padding-right: 10px;"></i>07 min</td>
+                            <td style="color: rgb(255, 81, 110);">Deliver</td>
+                             <td><span style="color: orange; background-color:  #ececec; border-radius: 5px; padding: 5px;">On The Way</span></td>
+                            <td>£26.00</td>
+                           <td   class="ddown-action"><i class="fa-solid fa-ellipsis-vertical" style="background-color: #ccc; padding: 5px;border-radius: 2px; "></i>
+                                <div class="ddown-content-li">
+                                    <ul style="list-style-type: none;">
+                                       <li>Cancel</li>
+                                        <li>Cancel Product</li>
+                                        <li>Message</li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td>#2632</td>
+                            <td><img src="photo/photo.jpg" alt=""></td>
+                            <td>Ya Chin-Ho</td>
+                            <td>Paid</td>
+                            <td><i class="fa-regular fa-clock" style="font-size: 15px; padding-right: 10px;"></i>49 min</td>
+                            <td>Collection</td>
+                            <td><span style="color: white; background-color: rgb(255, 29, 29); padding: 6px; border-radius: 5px;">Ready</span></td>
+                            <td>£8.00</td>
+                          <td  class="ddown-action"><i class="fa-solid fa-ellipsis-vertical" style="background-color: #ccc; padding: 5px;border-radius: 2px; "></i>
+                                <div class="ddown-content-li">
+                                    <ul style="list-style-type: none;">
+                                       <li>Cancel</li>
+                                        <li>Cancel Product</li>
+                                        <li>Message</li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td>#2632</td>
+                            <td><img src="photo/men profile.jpg.png"></td>
+                            <td>Shaamikh AlI</td>
+                            <td>Cash</td>
+                            <td><i class="fa-regular fa-clock" style="font-size: 15px; padding-right: 10px;"></i>13 min</td>
+                            <td style="color: rgb(255, 81, 110);">Delivery </td>
+                            <td><span style="color: orange; background-color: #ececec; border-radius: 5px; padding: 5px;">On The Way</span></td>
+                            <td>£14.00</td>
+                            <td   class="ddown-action"><i class="fa-solid fa-ellipsis-vertical" style="background-color: #ccc; padding: 5px;border-radius: 2px; "></i>
+                                <div class="ddown-content-li">
+                                    <ul style="list-style-type: none;">
+                                        <li>Cancel</li>
+                                        <li>Cancel Product</li>
+                                        <li>Message</li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+         </div>
+
+    </div>
+
+    
+</body>
+</html>
