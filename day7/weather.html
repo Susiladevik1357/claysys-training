@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Dashboard</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f2f2f2;
+    }
+    .box {
+      width: 350px;
+      margin: 30px auto;
+      padding: 20px;
+      border: 1px solid #aaa;
+      background: #fff;
+      border-radius: 10px;
+    }
+    h2 {
+      text-align: center;
+    }
+    input {
+      width: 70%;
+      padding: 7px;
+      margin-right: 5px;
+    }
+    button {
+      padding: 8px 10px;
+      background: blue;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+    }
+    .result p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Weather Dashboard</h2>
+  <input type="text" id="city" placeholder="Enter city name">
+  <button onclick="getWeather()">Search</button>
+
+  <div class="result">
+    <p><b>City Name:</b> <span id="cname">-</span></p>
+    <p><b>Temperature:</b> <span id="temp">-</span></p>
+    <p><b>Humidity:</b> <span id="humidity">-</span></p>
+    <p><b>Weather Icon:</b> <span id="icon"></span></p>
+  </div>
+</div>
+
+<script>
+async function getWeather() {
+  let city = document.getElementById("city").value.trim();
+  let apiKey = "bc0ca10092e0486ebaf101943252909";
+
+  if (city === "") {
+    alert("Please enter a city name");
+    return;
+  }
+
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  try {
+    let response = await fetch(url);
+    if (!response.ok) {
+      throw new Error("City not found");
+    }
+
+    let data = await response.json();
+    document.getElementById("cname").innerText = data.name;
+    document.getElementById("temp").innerText = data.main.temp + " °C";
+    document.getElementById("humidity").innerText = data.main.humidity + " %";
+    let iconCode = data.weather[0].icon;
+    let iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+    document.getElementById("icon").innerHTML = `<img src="${iconUrl}" alt="Weather Icon">`;
+
+  } catch (error) {
+    alert("Error: " + error.message);
+    document.getElementById("cname").innerText = "-";
+    document.getElementById("temp").innerText = "-";
+    document.getElementById("humidity").innerText = "-";
+    document.getElementById("icon").innerHTML = "";
+  }
+}
+</script>
