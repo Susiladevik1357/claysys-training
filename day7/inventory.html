@@ -68,7 +68,7 @@
         <label>Price:</label>
         <input type="number" id="pprice" placeholder="Enter product price">
         <label>Quantity:</label>
-        <input type="number" id="pqty" placeholder="Enter product quantity">
+        <input type="number" id="pquantity" placeholder="Enter product quantity">
         <button onclick="addProduct()">Add Product</button>
         <h3>Inventory List</h3>
         <table id="ptable">
@@ -83,13 +83,13 @@
 
 <script>
 class Product{
-    constructor(name, price, qty) {
+    constructor(name, price, quantity) {
     this.name = name;
     this.price = price;
-    this.qty = qty;
+    this.quantity = quantity;
   }
   getInfo(){
-    return this.name+ "-$"+this.price+"("+this.qty+")";
+    return this.name+ "-$"+this.price+"("+this.quantity+")";
   }
 }
 
@@ -99,20 +99,20 @@ class Product{
   function addProduct() {
     let name = document.getElementById("pname").value;
     let price = document.getElementById("pprice").value;
-    let qty = document.getElementById("pqty").value;
+    let quantity = document.getElementById("pquantity").value;
 
-    if (name == "" || price == "" || qty == "") {
+    if (name == "" || price == "" || quantity == "") {
       alert("Please enter all fields");
       return;
     }
 
-    let prod = new Product(name, price, qty);
+    let prod = new Product(name, price, quantity);
     inventory.push(prod);
 
     showTable();
     document.getElementById("pname").value = "";
     document.getElementById("pprice").value = "";
-    document.getElementById("pqty").value = "";
+    document.getElementById("pquantity").value = "";
   }
 
   function showTable() {
@@ -120,7 +120,7 @@ class Product{
     table.innerHTML = "<tr><th>Product Name</th><th>Price</th><th>Quantity</th></tr>";
 
     for (var i = 0; i < inventory.length; i++) {
-      let row = "<tr><td>" + inventory[i].name + "</td><td>$" + inventory[i].price + "</td><td>" + inventory[i].qty + "</td></tr>";
+      let row = "<tr><td>" + inventory[i].name + "</td><td>$" + inventory[i].price + "</td><td>" + inventory[i].quantity + "</td></tr>";
       table.innerHTML += row;
     }
   }
