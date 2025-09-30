@@ -1,90 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Weather Dashboard</title>
+  <meta charset="UTF-8">
+  <title>Weather deatails</title>
   <style>
     body {
-      font-family: Arial;
-      background: #f2f2f2;
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
-    .box {
-      width: 350px;
-      margin: 30px auto;
-      padding: 20px;
-      border: 1px solid #aaa;
+  
+    .outer-box {
+      border: 2px solid #558dd0;
+      padding: 5px;
+     
+    }
+    .inner-box {
       background: #fff;
-      border-radius: 10px;
+      padding: 10px;
+      border: 1px solid black;
+      border-radius: 8px;
+      text-align: center;
+      width: 360px;
     }
     h2 {
-      text-align: center;
+      margin-bottom: 15px;
     }
-    input {
-      width: 70%;
-      padding: 7px;
-      margin-right: 5px;
+    .search-box {
+      display: flex;
+      border: 1px solid #ccc;
+      overflow: hidden;
+      margin-bottom: 15px;
     }
-    button {
-      padding: 8px 10px;
+    .search-box input {
+      flex: 1;
+      border: none;
+      padding: 10px;
+      outline: none;
+      font-size: 14px;
+    }
+    .search-box button {
       background: blue;
       color: white;
       border: none;
+      padding: 10px 16px;
       cursor: pointer;
+      font-size: 14px;
     }
-    .result {
-      margin-top: 20px;
+    #result {
+      margin-top: 10px;
+      font-size: 15px;
+      text-align: left;
     }
-    .result p {
-      margin: 5px 0;
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 6px 0;
+      padding-bottom: 4px;
+    }
+    .label {
+      font-weight: bold;
+      color: #333;
+    }
+    .value {
+      color: #555;
+      display: flex;
+      align-items: center;
+      gap: 8px; 
+    }
+    .value img {
+      width: 32px;
+      height: 32px;
     }
   </style>
 </head>
 <body>
-
-<div class="box">
-  <h2>Weather Dashboard</h2>
-  <input type="text" id="city" placeholder="Enter city name">
-  <button onclick="getWeather()">Search</button>
-
-  <div class="result">
-    <p><b>City Name:</b> <span id="cname">-</span></p>
-    <p><b>Temperature:</b> <span id="temp">-</span></p>
-    <p><b>Humidity:</b> <span id="humidity">-</span></p>
-    <p><b>Weather Icon:</b> <span id="icon"></span></p>
+  <div class="outer-box">
+    <div class="inner-box">
+      <h2 style="text-align: left;">Weather Dashboard</h2>
+      <div class="search-box">
+        <input type="text" id="city" placeholder="Enter city name"
+               onkeydown="if(event.key==='Enter'){getWeather()}">
+        <button onclick="getWeather()">Search</button>
+      </div>
+      <div id="result"></div>
+    </div>
   </div>
-</div>
 
-<script>
-async function getWeather() {
-  let city = document.getElementById("city").value.trim();
-  let apiKey = "bc0ca10092e0486ebaf101943252909";
+  <script>
+    async function getWeather() {
+      let cityName = document.getElementById("city").value.trim();
+      if (cityName === "") {
+        alert("Please enter a city name");
+        return;
+      }
 
-  if (city === "") {
-    alert("Please enter a city name");
-    return;
-  }
+      let apiKey = "8a1b302d3dd71a38fd4b0e9b498cda62";
+      let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
 
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+      try {
+        let response = await fetch(url);
+        let data = await response.json();
+        console.log(data);
 
-  try {
-    let response = await fetch(url);
-    if (!response.ok) {
-      throw new Error("City not found");
+        if (data.cod !== 200) {
+          document.getElementById("result").innerHTML =
+            `<p style="color:red;">${data.message}</p>`;
+          return;
+        }
+
+        document.getElementById("result").innerHTML = `
+          <div class="row"><span class="label">City Name:</span> <span class="value">${data.name}</span></div>
+          <div class="row"><span class="label">Temperature:</span> <span class="value">${data.main.temp} °C</span></div>
+          <div class="row"><span class="label">Humidity:</span> <span class="value">${data.main.humidity}%</span></div>
+          <div class="row">
+            <span class="label">Weather Icon:</span> 
+            <span class="value">${data.weather[0].description}
+              <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="Weather icon">
+            </span>
+          </div>
+        `;
+      } catch (error) {
+        document.getElementById("result").innerHTML =
+          `<p style="color:red;">Error: ${error.message}</p>`;
+      }
     }
-
-    let data = await response.json();
-    document.getElementById("cname").innerText = data.name;
-    document.getElementById("temp").innerText = data.main.temp + " °C";
-    document.getElementById("humidity").innerText = data.main.humidity + " %";
-    let iconCode = data.weather[0].icon;
-    let iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
-    document.getElementById("icon").innerHTML = `<img src="${iconUrl}" alt="Weather Icon">`;
-
-  } catch (error) {
-    alert("Error: " + error.message);
-    document.getElementById("cname").innerText = "-";
-    document.getElementById("temp").innerText = "-";
-    document.getElementById("humidity").innerText = "-";
-    document.getElementById("icon").innerHTML = "";
-  }
-}
-</script>
+  </script>
+</body>
+</html>
