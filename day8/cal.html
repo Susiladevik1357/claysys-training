@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f4f4f4;
+    }
+    .box{
+      border: 3px solid rgb(113, 169, 221);
+      padding: 5px;
+    }
+
+
+    .calculator {
+      border: 2px solid black;
+      padding: 20px;
+      background: white;
+    }
+
+    #display {
+      width: 100%;
+      height: 40px;
+      font-size: 20px;
+      text-align: right;
+      margin-bottom: 10px;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 60px);
+      gap: 10px;
+    }
+
+    button {
+      padding: 15px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+      <div class="calculator">
+        <form id="form">
+          <input type="text" id="display" value="0" >
+        </form>
+        <div class="buttons">
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+          <button>/</button>
+                
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+          <button>*</button>
+                
+                
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>-</button>
+                
+                
+          <button>0</button>
+          <button>C</button>
+          <button>=</button>
+          <button>+</button>
+            
+        </div>
+      </div>
+    </div>
+    <script src="./dist/cal.js"></script>
+</body>
+</html>
