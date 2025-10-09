@@ -271,6 +271,40 @@ input, select, textarea, button {
 }
 
 /* MODAL PANEL SPACING */
+/* ---------- Center the Add Event Modal ---------- */
+#modalEvent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* hidden by default */
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.5); /* dim background */
+  z-index: 9999;
+}
+
+#modalEvent.show {
+  display: flex; /* show modal and center it */
+}
+
+/* Style the inner panel */
+#modalEvent .panel {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
 .modal .panel {
   background: #fff;
   padding: 20px;
@@ -817,14 +851,6 @@ function setCurrent(u){
    localStorage.setItem(KEY_CURRENT, JSON.stringify(u)); 
   }
 
-/* Create default admin if none */
-(function ensureDefaultAdmin(){
-  const users = getUsers();
-  if(!users.some(u=>u.username === 'admin')){
-    users.push({ username:'admin', email:'admin@demo.local', password:'admin123', role:'Admin' });
-    setUsers(users);
-  }
-})();
 
 /* ---------- UI helpers ---------- */
 const authArea = document.getElementById('auth-area');
@@ -1395,20 +1421,19 @@ function renderAgendaForEvent(){
 
 /* ---------- INIT ---------- */
 window.addEventListener('load', ()=>{
-  // ensure UI state
-  const cur = getCurrent();
-  if(cur){
-    afterLogin();
-  } else {
-    authArea.style.display='block';
-    sidebar.style.display='none';
-    document.getElementById('pageTitle').innerHTML = '<div class="login-title">Event Planning Management</div>';
-  }
+  // Always start on login page
+  setCurrent(null); // clear current login session on load
+
+  authArea.style.display = 'block';
+  sidebar.style.display = 'none';
+  document.getElementById('pageTitle').innerHTML = '<div class="login-title">Event Planning Management</div>';
+
   populateEventCategory();
   populateEventSelect();
   populateAgendaEventSelect();
   renderAll();
 });
+
 </script>
 </body>
 </html>
