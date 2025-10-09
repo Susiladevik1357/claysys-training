@@ -34,7 +34,6 @@
     height:fit-content;
     display:grid;
     grid-template-columns: 300px 1fr;
-    
   }
 
   /* LEFT: Auth or Sidebar */
@@ -995,14 +994,17 @@ function renderAdminUsers() {
 }
 
 //change
-function deleteUser(username){
-  if(!confirm('Delete user '+username+'?')) return;
-  let users = getUsers();
-  users = users.filter(u=>u.username !== username);
+function deleteUser(index){
+  const users = getUsers();
+  if(!users[index]) return;
+  if(!confirm('Delete user ' + users[index].username + '?')) return;
+
+  users.splice(index, 1);
   setUsers(users);
   renderAdminUsers();
   refreshCounts();
 }
+
 
 function impersonateUser(index){
   const u = getUsers()[index];
@@ -1011,7 +1013,6 @@ function impersonateUser(index){
   afterLogin();
   alert('Now impersonating '+u.username);
 }
-
 
 /* ---------- ADMIN: edit existing user ---------- */
 function editUser(index) {
