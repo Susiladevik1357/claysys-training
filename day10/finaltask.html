@@ -31,7 +31,7 @@
     background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
     box-shadow:0 8px 30px rgba(0,0,0,0.08);
     border-radius:12px;
-    height: 80vh;
+    height:fit-content;
     display:grid;
     grid-template-columns: 300px 1fr;
     
@@ -45,15 +45,10 @@
     display:flex;
     flex-direction:column;
     gap:30px;
+
     align-items:stretch;
   }
- .left, .right {
-  height: 100%;
-}
-/* 
-.right {
-  overflow-y: auto;
-} */
+ 
 
   .brand {font-weight:700;font-size:1.1rem; display:flex; align-items:center; gap:10px}
   .brand .logo {font-size:1.6rem}
@@ -149,6 +144,21 @@
     border-color: #333;
     
   }
+  .card table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* ensures equal column widths */
+  overflow-x: auto;
+  display: block; /* allows horizontal scrolling if needed */
+}
+
+.card th, .card td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  word-wrap: break-word; /* prevents text from overflowing */
+}
+
   .card h3 { 
     margin:0 0 8px 0; 
     font-size:0.95rem 
@@ -556,14 +566,16 @@ input, select, textarea, button {
 
   <!-- RIGHT: Main content area -->
   <div class="right">
-
+    
     <div class="topbar">
-      <h1 id="pageTitle">
-      </h1>
+       <h1 id="pageTitle"></h1>
+     
+    
       <div class="actions">
         <div id="roleLabel" class="muted"></div>
       </div>
-    </div>
+      </div>
+    
 
     <!-- ADMIN: dashboard -->
     <div id="admin-dashboard" class="section">
@@ -982,7 +994,7 @@ function renderAdminUsers() {
   });
 }
 
-
+//change
 function deleteUser(username){
   if(!confirm('Delete user '+username+'?')) return;
   let users = getUsers();
