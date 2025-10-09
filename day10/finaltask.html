@@ -155,41 +155,7 @@
   }
 
   /* Table */
-  @media (max-width: 480px) {
-  table, thead, tbody, th, td, tr {
-    display: block;
-    width: 100%;
-  }
 
-  thead tr {
-    display: none; /* hide table header */
-  }
-
-  tr {
-    margin-bottom: 15px;
-    border-bottom: 1px solid #ddd;
-  }
-
-  td {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px;
-    border-bottom: 1px solid #eee;
-    position: relative;
-  }
-
-  td::before {
-    content: attr(data-label);
-    font-weight: bold;
-    color: var(--muted);
-    flex: 1;
-  }
-
-  td button {
-    flex: none;
-    margin-left: 5px;
-  }
-}
   /* Modal */
   .modal {
     
@@ -409,7 +375,18 @@ input, select, textarea, button {
     padding: 10px;
     overflow-x: hidden;
   }
+  .left {
+    overflow-y: auto; /* allow sidebar to scroll */
+  }
+
+  .logout-btn {
+    padding: 10px;
+    font-size: 1rem;
+    justify-content: center; /* keep centered */
+  }
+
 }
+
 
 
 /* Make tables scroll horizontally on mobile */
@@ -441,8 +418,13 @@ input, select, textarea, button {
     content: attr(data-label);
     font-weight: bold;
     flex: 1;
+    .logout-btn {
+    font-size: 0.95rem;
+    padding: 8px;
   }
 }
+}
+
 
 /* Responsive tiles/cards */
 .tiles {
