@@ -1,0 +1,15 @@
+C:\Users\admin\Desktop\GitHub\claysys-training\ex14-Abstract class\obj\Debug\net8.0\ex14-Abstract class.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\Desktop\GitHub\claysys-training\ex14-Abstract class\obj\Debug\net8.0\ex14-Abstract class.AssemblyInfoInputs.cache
+C:\Users\admin\Desktop\GitHub\claysys-training\ex14-Abstract class\obj\Debug\net8.0\ex14-Abstract class.AssemblyInfo.cs
+C:\Users\admin\Desktop\GitHub\claysys-training\ex14-Abstract class\obj\Debug\net8.0\ex14-Abstract class.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\GitHub\claysys-training\ex14-Abstract class\obj\Debug\net8.0\ex14-Abstract class.sourcelink.json
+C:\Users\admin\Desktop\GitHub\claysys-training\ex14-Abstract class\bin\Debug\net8.0\ex14-Abstract class.exe
+C:\Users\admin\Desktop\GitHub\claysys-training\ex14-Abstract class\bin\Debug\net8.0\ex14-Abstract class.deps.json
+C:\Users\admin\Desktop\GitHub\claysys-training\ex14-Abstract class\bin\Debug\net8.0\ex14-Abstract class.runtimeconfig.json
+C:\Users\admin\Desktop\GitHub\claysys-training\ex14-Abstract class\bin\Debug\net8.0\ex14-Abstract class.dll
+C:\Users\admin\Desktop\GitHub\claysys-training\ex14-Abstract class\bin\Debug\net8.0\ex14-Abstract class.pdb
+C:\Users\admin\Desktop\GitHub\claysys-training\ex14-Abstract class\obj\Debug\net8.0\ex14-Abstract class.dll
+C:\Users\admin\Desktop\GitHub\claysys-training\ex14-Abstract class\obj\Debug\net8.0\refint\ex14-Abstract class.dll
+C:\Users\admin\Desktop\GitHub\claysys-training\ex14-Abstract class\obj\Debug\net8.0\ex14-Abstract class.pdb
+C:\Users\admin\Desktop\GitHub\claysys-training\ex14-Abstract class\obj\Debug\net8.0\ex14-Abstract class.genruntimeconfig.cache
+C:\Users\admin\Desktop\GitHub\claysys-training\ex14-Abstract class\obj\Debug\net8.0\ref\ex14-Abstract class.dll

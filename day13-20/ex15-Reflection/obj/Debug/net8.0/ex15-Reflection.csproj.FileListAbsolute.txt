@@ -1,0 +1,15 @@
+C:\Users\admin\Desktop\GitHub\claysys-training\ex15-Reflection\obj\Debug\net8.0\ex15-Reflection.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\Desktop\GitHub\claysys-training\ex15-Reflection\obj\Debug\net8.0\ex15-Reflection.AssemblyInfoInputs.cache
+C:\Users\admin\Desktop\GitHub\claysys-training\ex15-Reflection\obj\Debug\net8.0\ex15-Reflection.AssemblyInfo.cs
+C:\Users\admin\Desktop\GitHub\claysys-training\ex15-Reflection\obj\Debug\net8.0\ex15-Reflection.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\GitHub\claysys-training\ex15-Reflection\obj\Debug\net8.0\ex15-Reflection.sourcelink.json
+C:\Users\admin\Desktop\GitHub\claysys-training\ex15-Reflection\bin\Debug\net8.0\ex15-Reflection.exe
+C:\Users\admin\Desktop\GitHub\claysys-training\ex15-Reflection\bin\Debug\net8.0\ex15-Reflection.deps.json
+C:\Users\admin\Desktop\GitHub\claysys-training\ex15-Reflection\bin\Debug\net8.0\ex15-Reflection.runtimeconfig.json
+C:\Users\admin\Desktop\GitHub\claysys-training\ex15-Reflection\bin\Debug\net8.0\ex15-Reflection.dll
+C:\Users\admin\Desktop\GitHub\claysys-training\ex15-Reflection\bin\Debug\net8.0\ex15-Reflection.pdb
+C:\Users\admin\Desktop\GitHub\claysys-training\ex15-Reflection\obj\Debug\net8.0\ex15-Reflection.dll
+C:\Users\admin\Desktop\GitHub\claysys-training\ex15-Reflection\obj\Debug\net8.0\refint\ex15-Reflection.dll
+C:\Users\admin\Desktop\GitHub\claysys-training\ex15-Reflection\obj\Debug\net8.0\ex15-Reflection.pdb
+C:\Users\admin\Desktop\GitHub\claysys-training\ex15-Reflection\obj\Debug\net8.0\ex15-Reflection.genruntimeconfig.cache
+C:\Users\admin\Desktop\GitHub\claysys-training\ex15-Reflection\obj\Debug\net8.0\ref\ex15-Reflection.dll

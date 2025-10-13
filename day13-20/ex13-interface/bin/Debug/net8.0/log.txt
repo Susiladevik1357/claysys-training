@@ -1,0 +1,6 @@
+[INFO]: Application started Successfully.
+[WARNING]: ALow memory warning.
+[ERROR]: Application crashed unexpectedly.
+[INFO]: Application started Successfully.
+[WARNING]: ALow memory warning.
+[ERROR]: Application crashed unexpectedly.
