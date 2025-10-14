@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\admin\\Desktop\\GitHub\\claysys-training\\ex15-Reflection\\ex15-Reflection.csproj": {}
+    "C:\\Users\\admin\\Documents\\GitHub\\claysys-training\\day13-20\\ex15-Reflection\\ex15-Reflection.csproj": {}
   },
   "projects": {
-    "C:\\Users\\admin\\Desktop\\GitHub\\claysys-training\\ex15-Reflection\\ex15-Reflection.csproj": {
+    "C:\\Users\\admin\\Documents\\GitHub\\claysys-training\\day13-20\\ex15-Reflection\\ex15-Reflection.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin\\Desktop\\GitHub\\claysys-training\\ex15-Reflection\\ex15-Reflection.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\Documents\\GitHub\\claysys-training\\day13-20\\ex15-Reflection\\ex15-Reflection.csproj",
         "projectName": "ex15-Reflection",
-        "projectPath": "C:\\Users\\admin\\Desktop\\GitHub\\claysys-training\\ex15-Reflection\\ex15-Reflection.csproj",
+        "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\claysys-training\\day13-20\\ex15-Reflection\\ex15-Reflection.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin\\Desktop\\GitHub\\claysys-training\\ex15-Reflection\\obj\\",
+        "outputPath": "C:\\Users\\admin\\Documents\\GitHub\\claysys-training\\day13-20\\ex15-Reflection\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,7 +40,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

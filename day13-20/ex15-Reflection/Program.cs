@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Reflection;
 
-// Sample class 1
+
 public class Person
 {
     public string Name { get; set; }
     public int Age { get; set; }
 }
 
-// Sample class 2
+
 public class Product
 {
     public string ProductName { get; set; }
@@ -17,7 +17,7 @@ public class Product
 
 class Program
 {
-    // Method to serialize object properties using reflection
+    
     public static void SerializeObject(object obj)
     {
         Type type = obj.GetType();
@@ -31,7 +31,7 @@ class Program
         }
     }
 
-    // Method to safely read a string from the user
+   
     static string ReadString(string prompt)
     {
         string? input;
@@ -44,7 +44,7 @@ class Program
         return input;
     }
 
-    // Method to safely read an int from the user
+    
     static int ReadInt(string prompt)
     {
         int value;
@@ -58,7 +58,7 @@ class Program
         return value;
     }
 
-    // Method to safely read a double from the user
+   
     static double ReadDouble(string prompt)
     {
         double value;

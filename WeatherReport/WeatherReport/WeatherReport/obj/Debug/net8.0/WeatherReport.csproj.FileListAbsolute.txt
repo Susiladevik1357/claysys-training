@@ -1,5 +1,0 @@
-C:\Users\admin\Documents\GitHub\claysys-training\WeatherReport\WeatherReport\WeatherReport\obj\Debug\net8.0\WeatherReport.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\admin\Documents\GitHub\claysys-training\WeatherReport\WeatherReport\WeatherReport\obj\Debug\net8.0\WeatherReport.AssemblyInfoInputs.cache
-C:\Users\admin\Documents\GitHub\claysys-training\WeatherReport\WeatherReport\WeatherReport\obj\Debug\net8.0\WeatherReport.AssemblyInfo.cs
-C:\Users\admin\Documents\GitHub\claysys-training\WeatherReport\WeatherReport\WeatherReport\obj\Debug\net8.0\WeatherReport.csproj.CoreCompileInputs.cache
-C:\Users\admin\Documents\GitHub\claysys-training\WeatherReport\WeatherReport\WeatherReport\obj\Debug\net8.0\WeatherReport.sourcelink.json

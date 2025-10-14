@@ -1,73 +1,93 @@
 ﻿using System;
 using System.IO;
+
 public interface ILogger
 {
     void LogInfo(string message);
     void LogWarning(string message);
     void LogError(string message);
 }
+
 public class ConsoleLogger : ILogger
 {
+    private void WriteLog(string level, string message, ConsoleColor color)
+    {
+        Console.ForegroundColor = color;
+        Console.WriteLine($"{DateTime.Now:yyyy-MM-dd HH:mm:ss} [{level}]: {message}");
+        Console.ResetColor();
+    }
+
     public void LogInfo(string message)
     {
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("[INFO]; " + message);
-        Console.ResetColor();
+        WriteLog("INFO", message, ConsoleColor.Green);
     }
+
     public void LogWarning(string message)
     {
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine("[Warning]: " + message);
-        Console.ResetColor();
+        WriteLog("WARNING", message, ConsoleColor.Yellow);
     }
+
     public void LogError(string message)
     {
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine("[ERROR]: " + message);
-        Console.ResetColor();
+        WriteLog("ERROR", message, ConsoleColor.Red);
     }
 }
+
 public class FileLogger : ILogger
 {
     private string filePath = "log.txt";
+
+    private void WriteLog(string level, string message)
+    {
+        string logEntry = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} [{level}]: {message}{Environment.NewLine}";
+        File.AppendAllText(filePath, logEntry);
+    }
+
     public void LogInfo(string message)
     {
-        File.AppendAllText(filePath, "[INFO]: " + message + Environment.NewLine);
+        WriteLog("INFO", message);
     }
+
     public void LogWarning(string message)
     {
-        File.AppendAllText(filePath, "[WARNING]: " + message + Environment.NewLine);
+        WriteLog("WARNING", message);
     }
+
     public void LogError(string message)
     {
-        File.AppendAllText(filePath, "[ERROR]: " + message + Environment.NewLine);
+        WriteLog("ERROR", message);
     }
 }
-public class Application
+
+public class App
 {
     private readonly ILogger _logger;
-        public Application(ILogger logger)
+
+    public App(ILogger logger)
     {
         _logger = logger;
-        
     }
+
     public void Run()
     {
-        _logger.LogInfo("Application started Successfully.");
-        _logger.LogWarning("ALow memory warning.");
+        _logger.LogInfo("Application started successfully.");
+        _logger.LogWarning("A low memory warning.");
         _logger.LogError("Application crashed unexpectedly.");
     }
 }
+
 class Program
 {
     static void Main(string[] args)
     {
-    
-        Console.WriteLine("Choose logger type: 1.Console 2.File");
+        Console.WriteLine("Choose logger type: 1. Console  2. File");
         string? choice = Console.ReadLine();
-        ILogger logger=(choice == "1")? new ConsoleLogger(): new FileLogger();
-        Application app = new Application(logger);
+
+        ILogger logger = (choice == "1") ? new ConsoleLogger() : new FileLogger();
+
+        App app = new App(logger);
         app.Run();
+
         Console.WriteLine("Logging completed.");
     }
 }
