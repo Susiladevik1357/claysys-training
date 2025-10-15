@@ -29,11 +29,12 @@ const good = document.getElementById("good");
             if (fast.checked) {
                 if (good.checked || cheap.checked) {
                     fast.checked = false;
-                    message.textContent = "Cannot select Fast with Good or Cheap!";
+                    message.textContent = "Only two can be selected Cannot select Fast with Good or Cheap!";
                     setTimeout(() => message.textContent = "", 2000);
                 } else {
                     resetOthers(["fast"]);
                 }
             }
         });
+
 
