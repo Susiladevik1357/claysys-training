@@ -8,10 +8,11 @@ const good = document.getElementById("good");
     message.textContent = "";
     if (selected.length > 2) {
       this.checked = false;
-      message.textContent = "⚠️ Only two can be selected.";
+      message.textContent = "Only two can be selected";
     }
   }
 
   [good, cheap, fast].forEach(opt => {
     opt.addEventListener("change", updateSelection);
 });
+
