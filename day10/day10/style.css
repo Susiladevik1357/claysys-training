@@ -1,0 +1,170 @@
+/* ===================== LOGIN PAGE ===================== */
+#auth-area { display:block; }
+.login-page { height:100vh; width:100%; background:linear-gradient(135deg,#4caf50,#2e7d32); display:flex; align-items:center; justify-content:center; }
+.login-container { text-align:center; color:#333; }
+.login-brand { margin-bottom:20px; }
+.login-logo { font-size:40px; }
+.login-title { font-size:26px; margin-top:10px; color:#fff; font-weight:bold; }
+.login-box { background:#fff; padding:30px; border-radius:20px; width:340px; box-shadow:0 5px 15px rgba(0,0,0,0.2);}
+.login-input, .login-select { width:100%; padding:10px; margin:10px 0 15px; border:1px solid #ccc; border-radius:8px; font-size:15px;}
+.login-buttons { display:flex; justify-content:space-between; gap:10px;}
+.login-btn { flex:1; padding:10px; border:none; border-radius:8px; background:#4CAF50; color:#fff; font-size:16px; font-weight:600; cursor:pointer;}
+.login-btn:hover { background:#43a047;}
+.login-btn.alt { background:#999;}
+.login-btn.alt:hover { background:#777;}
+
+/* ===================== APP ===================== */
+.app { display:flex; min-height:100vh; display:none; }
+.sidebar { width:220px; background:#333; color:white; display:flex; flex-direction:column; align-items:center; padding-top:20px; position:fixed; height:100vh; }
+.sidebar-header { text-align:center; margin-bottom:30px; }
+.sidebar-nav { display:flex; flex-direction:column; gap:10px; width:100%; align-items:center; }
+.sidebar-nav button, .logout-btn {align-items:center;width:85%; padding:10px; border:none; border-radius:8px; cursor:pointer; text-align:center; }
+.sidebar-nav button:hover, .logout-btn:hover { background:#555; }
+.logout-btn { margin-top:auto; margin-bottom:20px; background:#f44336; color:#fff; }
+
+.main-content { flex:1; margin-left:220px; padding:20px; background:#f9f9f9; min-height:100vh; }
+.topbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+.muted { color:#666; }
+
+.section { display:none; margin-bottom:30px; }
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.section-header h2 {
+  margin: 0;
+}
+
+.card { background:#fff; padding:15px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1); margin-top:10px; }
+.tiles { display:flex; gap:10px; }
+.tile { flex:1; background:#4CAF50; color:white; border-radius:8px; padding:15px; text-align:center; }
+
+.small { padding:8px 10px; border-radius:8px; border:none; cursor:pointer; font-weight:700; margin:2px;}
+.purple { background:#6c63ff; color:#fff; } 
+.green { background:#4CAF50; color:#fff; } 
+.danger { background:#f44336; color:#fff; } 
+.blue { background:#2196F3; color:#fff; } 
+
+table { width:100%; border-collapse:collapse; }
+th, td { padding:8px 6px; border-bottom:1px solid #eee; text-align:left; font-size:14px; }
+
+.modal { position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,0.4); z-index:100; }
+.modal.show { display:flex;}
+.modal .panel { background:#fff; padding:18px; border-radius:12px; width:90%; max-width:520px; box-shadow:0 8px 30px rgba(0,0,0,0.2); }
+
+.modal input, .modal select, .modal textarea { width:100%; margin:5px 0 10px; padding:8px; font-size:14px; border-radius:6px; border:1px solid #ccc; }
+.modal-buttons { display:flex; justify-content:flex-end; gap:10px; margin-top:10px; }
+.modal-buttons button { padding:8px 12px; border:none; border-radius:6px; cursor:pointer; font-weight:600; }
+.modal-buttons .save { background:#4CAF50; color:#fff; }
+.modal-buttons .cancel { background:#f44336; color:#fff; }
+
+#guestTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#guestTable th, #guestTable td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+#guestTable th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#guestTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#guestTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* ===== ADMIN BACKUPS ===== */
+.backup-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.backup-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.backup-list li span:first-child {
+  color: #333;
+  font-weight: 500;
+}
+
+.backup-list li:last-child {
+  border-bottom: none;
+}
+
+.backup-list button {
+  margin-left: 5px;
+}
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 180px;
+  }
+  .main-content {
+    margin-left: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 0;
+  }
+  .main-content {
+    margin-left: 0;
+    padding: 15px;
+  }
+  .tiles {
+    flex-wrap: wrap;
+  }
+  .tile {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .login-box {
+    width: 100%;
+    padding: 20px;
+  }
+  .login-title {
+    font-size: 22px;
+  }
+  .tiles {
+    flex-direction: column;
+  }
+  .tile {
+    width: 100%;
+  }
+  .sidebar-nav button, .logout-btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+  th, td {
+    font-size: 12px;
+  }
+}
